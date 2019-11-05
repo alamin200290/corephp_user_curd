@@ -10,7 +10,15 @@
 			echo "null submission!";
 		}else{
 
-			if($uname == $password){
+			$conn = mysqli_connect('localhost', 'root', '', 'webtech');
+			//$sql = "select * from users where username='".$uname."' and password='".$password."'";
+
+			$sql = "select * from users where username='{$uname}' and password='{$password}'";
+
+			$result = mysqli_query($conn, $sql);
+			$user = mysqli_fetch_assoc($result);
+
+			if(count($user) > 0){
 				
 				$_SESSION['username'] = $uname;
 				$_SESSION['password'] = $password;
