@@ -11,7 +11,13 @@
 <body>
 
 	<h1>Welcome Home! <?=$_COOKIE['username']?></h1> 
-	<a href="logout.php">logout</a>
+	
+	<a href="userlist.php">User List</a> | 
+	<a href="adduser.php">Add User</a> | 
+	<a href="../php/logout.php">logout</a>
+
+
+
 </body>	
 </html>
 

@@ -1,7 +1,6 @@
 <?php
-	
-	session_start();
 
+	session_start();
 	if(isset($_POST['submit'])){
 
 		$uname = $_POST['uname'];
@@ -13,11 +12,11 @@
 
 			if($uname == $password){
 				
-				//$_SESSION['username'] = $uname;
-				//$_SESSION['password'] = $password;
+				$_SESSION['username'] = $uname;
+				$_SESSION['password'] = $password;
 
 				setcookie("username", $uname, time()+3600, "/");
-				header('location: home.php');
+				header('location: ../views/home.php');
 
 			}else{
 				echo "invalid username/password";
