@@ -1,4 +1,6 @@
 <?php
+	
+	require_once('functions.php');
 
 	if(isset($_POST['submit'])){
 
@@ -10,10 +12,9 @@
 			echo "null submission!";
 		}else{
 
-			$conn = mysqli_connect('localhost', 'root', '', 'webtech');
-			$sql = "insert into users values('', '{$uname}','{$password}', '{$email}', 0)";
+			$status = register($uname, $password, $email);
 
-			if(mysqli_query($conn, $sql)){
+			if($status){
 
 				header('location: ../views/login.php?msg=success');
 			}else{

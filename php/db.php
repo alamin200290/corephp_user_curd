@@ -1,6 +1,7 @@
 <?php
 
-	$conn = mysqli_connect('localhost', 'root', '', 'webtech');
-
-
+	function getConnection(){
+		$conn = mysqli_connect('localhost', 'root', '', 'webtech');
+		return $conn;
+	}
 ?>

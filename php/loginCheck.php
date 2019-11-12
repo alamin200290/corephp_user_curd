@@ -1,7 +1,6 @@
 <?php
 	session_start();
-	require_once('db.php');
-
+	require_once('functions.php');
 	//define(name, value)
 	
 	if(isset($_POST['submit'])){
@@ -12,13 +11,10 @@
 		if(empty($uname) == true || empty($password) == true){
 			echo "null submission!";
 		}else{
-		
-			$sql = "select * from users where username='{$uname}' and password='{$password}'";
 
-			$result = mysqli_query($conn, $sql);
-			$user = mysqli_fetch_assoc($result);
+			$count = validate($uname, $password);
 
-			if(count($user) > 0){
+			if($count > 0){
 				
 				$_SESSION['username'] = $uname;
 				$_SESSION['password'] = $password;
