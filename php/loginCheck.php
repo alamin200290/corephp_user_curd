@@ -30,7 +30,6 @@
 				echo "invalid username/password";
 			}
 		}
-
 	}else{
 		header('location: ../views/login.php');
 	}
