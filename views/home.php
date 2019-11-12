@@ -16,16 +16,13 @@
 	<a href="adduser.php">Add User</a> | 
 	<a href="../php/logout.php">logout</a>
 
-
-
 </body>	
 </html>
 
 
-
 <?php		
 	}else{
-		header('location: login.html');
+		header('location: login.php');
 	}
 
 ?>

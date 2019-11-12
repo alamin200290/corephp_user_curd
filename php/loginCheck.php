@@ -1,6 +1,9 @@
 <?php
-
 	session_start();
+	require_once('db.php');
+
+	//define(name, value)
+	
 	if(isset($_POST['submit'])){
 
 		$uname = $_POST['uname'];
@@ -9,10 +12,7 @@
 		if(empty($uname) == true || empty($password) == true){
 			echo "null submission!";
 		}else{
-
-			$conn = mysqli_connect('localhost', 'root', '', 'webtech');
-			//$sql = "select * from users where username='".$uname."' and password='".$password."'";
-
+		
 			$sql = "select * from users where username='{$uname}' and password='{$password}'";
 
 			$result = mysqli_query($conn, $sql);
@@ -32,7 +32,7 @@
 		}
 
 	}else{
-		header('location: login.html');
+		header('location: ../views/login.php');
 	}
 
 
