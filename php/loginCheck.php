@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	require_once('functions.php');
+	require_once('../db/functions.php');
 	//define(name, value)
 	
 	if(isset($_POST['submit'])){

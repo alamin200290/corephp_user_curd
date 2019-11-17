@@ -1,3 +1,9 @@
+<?php
+	
+	include('../db/functions.php');
+	$data = getAllUser();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,29 +20,26 @@
 
 	<table border="1" >
 		<tr>
-			<th>UserName</th>
-			<th>Password</th>
-			<th>Type</th> 
+			<th>ID</th>
+			<th>Username</th>
+			<th>Password</th> 
+			<th>Email</th> 
 			<th>Action</th> 
 		</tr>
+
+		
+		<?php for($i=0; $i<count($data); $i++){ ?>
 		<tr>
-			<td>Test</td>
-			<td>Test</td>
-			<td>Test</td>
+			<td><?= $data[$i]['id']; ?></td>
+			<td><?= $data[$i]['username']; ?></td>
+			<td><?= $data[$i]['password']; ?></td>
+			<td><?= $data[$i]['email']; ?></td>
 			<td>
-				<a href="edit.php">EDIT</a> |
-				<a href="delete.php">DELETE</a> |
+				<a href="edit.php">Edit</a> | 
+				<a href="../php/delete.php?id=<?=$data[$i]['id']?>">Delete</a> 
 			</td>
 		</tr>
-		<tr>
-			<td>Test</td>
-			<td>Test</td>
-			<td>Test</td>
-			<td>
-				<a href="edit.php">EDIT</a> |
-				<a href="delete.php">DELETE</a> |
-			</td>
-		</tr>
+		<?php	}  ?>
 	</table>
 </body>
 </html>
