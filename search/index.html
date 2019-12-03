@@ -6,24 +6,23 @@
 <body>
 
 	<div id="data">Test</div>
-	<input type="button" name="" value="Click!" onclick="f1()" />
-
-
+	
+	<input type="text" name="" onkeyup="search(this.value)" />
+	<div id="content">
+		
+	</div>
 	<script type="text/javascript">
 	
-		function f1(){
-
-			document.getElementById('data').innerHTML = "<img src='load.gif' width='100px' height='100px'>";
+		function search(val){
+			
 				var xhttp = new XMLHttpRequest();
-				xhttp.open("POST", "abc.php", true);
+				xhttp.open("POST", "search.php", true);
 				xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-				xhttp.send('id=10&abc='+Math.random());
+				xhttp.send('key='+val);
 			
 				xhttp.onreadystatechange = function() {
-				
 					if (this.readyState == 4 && this.status == 200) {
-					 	//alert(this.responseText);
-					 	document.getElementById('data').innerHTML = this.responseText;
+					 	document.getElementById('content').innerHTML = this.responseText;					 
 					}
 				};
 		}
