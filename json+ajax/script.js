@@ -14,10 +14,10 @@ function ajax(){
 		xhttp.send();
 		xhttp.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
-			 	//alert(this.responseText);
-			 	//var obj = JSON.parse(this.responseText);
-			 	var obj = this.responseText;
+			 	var obj = JSON.parse(this.responseText);
 			 	alert(obj.id);
+			 	//var obj = this.responseText;
+			 	//alert(obj.id);
 			}
 		};
 }
