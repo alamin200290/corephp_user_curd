@@ -1,36 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ajax Example</title>
+	<title>Javascript Example</title>
+	<script type="text/javascript" src="script.js"></script>
 </head>
 <body>
 
-	<div id="data">Test</div>
-	
-	<input type="text" name="" onkeyup="search(this.value)" />
-	<div id="content">
+
+<!-- 	<h1 id="h1">Hello</h1>
+
+	<form>
+		<input type="text" id="name" name="name" value="" onkeyup="f2()" />
+		<input type="button" name="submit" value="Submit" onclick="f1()" />
+
+		<div id="msg"></div>
+	</form>	 -->
+
+	<div onclick="f3()" id="d1" style="background-color: red; position: absolute; width:100px; height: 100px">
 		
 	</div>
-	<script type="text/javascript">
-	
-		function search(val){
-			
-				var xhttp = new XMLHttpRequest();
-				xhttp.open("POST", "search.php", true);
-				xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-				xhttp.send('key='+val);
-			
-				xhttp.onreadystatechange = function() {
-					if (this.readyState == 4 && this.status == 200) {
-						var obj = JSON.parse(this.responseText);
-					 	//document.getElementById('content').innerHTML =obj.uname;
-					 	alert(obj.id);					 
-					}
-				};
-		}
 
-
-	</script>
 </body>
 </html>
 

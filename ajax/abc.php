@@ -1,7 +1,5 @@
 <?php
-	
-	//sleep(3);
 
-	mysqli_connect();
-	echo $_POST['id'];
+	$json = ['id'=>'12', 'name'=>'alamin', 'course'=>'webtech'];
+	echo json_encode($json);
 ?>

@@ -20,14 +20,12 @@
 				xhttp.send('id=10&abc='+Math.random());
 			
 				xhttp.onreadystatechange = function() {
-				
 					if (this.readyState == 4 && this.status == 200) {
 					 	//alert(this.responseText);
 					 	document.getElementById('data').innerHTML = this.responseText;
 					}
 				};
 		}
-
 
 	</script>
 </body>
